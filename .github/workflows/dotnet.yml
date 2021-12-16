@@ -17,5 +17,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
+    - name: Variable Substitution appsettings file for tests
+      uses: microsoft/variable-substitution@v1
+      with:
+        files: 'src/DependabotSecretsPOC.Tests/appsettings.json'
+      env:
+        AppSettings.ClientSecret: "${{ secrets.MYSECRET }}"   
     - name: Test
       run: dotnet test src/DependabotSecretsPOC.sln
