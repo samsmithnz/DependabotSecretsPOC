@@ -22,6 +22,6 @@ jobs:
       with:
         files: 'src/DependabotSecretsPOC.Tests/appsettings.json'
       env:
-        AppSettings.ClientSecret: "${{ secrets.MYSECRET }}"   
+        AppSettings.MySecret: "${{ secrets.MYSECRET }}"   
     - name: Test
       run: dotnet test src/DependabotSecretsPOC.sln
