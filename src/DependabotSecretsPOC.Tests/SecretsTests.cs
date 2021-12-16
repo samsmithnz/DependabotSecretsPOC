@@ -23,7 +23,8 @@ public class SecretsTests
         //arrange
         IConfigurationBuilder config = new ConfigurationBuilder()
            .SetBasePath(AppContext.BaseDirectory)
-           .AddJsonFile("appsettings.json");
+           //.AddJsonFile("appsettings.json")
+           .AddUserSecrets<SecretsTests>(true);
         IConfigurationRoot Configuration = config.Build();
 
         //assert
